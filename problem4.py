@@ -13,8 +13,8 @@ def is_palindrone(num):
 #brute force
 def basic_concept(n):
   current_max = 0
-  for i in range(0,int(pow(10,n))):
-    for j in range(0,int(pow(10,n))):
+  for i in range(int(pow(10,n-1)),int(pow(10,n))):
+    for j in range(int(pow(10,n-1)),int(pow(10,n))):
       num = i*j
       if is_palindrone(num):
         if num > current_max:
@@ -24,7 +24,7 @@ def basic_concept(n):
 #ENHANCE!
 def make_it_faster(n):
   current_max = 0
-  for i in range(1,int(pow(10,n))):
+  for i in range(int(pow(10,n-1)),int(pow(10,n))):
     #don't check twice. don't check 1x2 then again 2x1
     for j in range(i,int(pow(10,n))):
       num = i*j
